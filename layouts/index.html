@@ -7,56 +7,52 @@
         <img class="floating" id="svg-1" src="/img/leaf-yellow.svg"></img>
         <img id="svg-2" src="/img/dots-group-cyan.svg"></img>
         <img id="svg-3" class="floating-90deg"  src="/img/leaf-orange.svg"></img>
-      <p><!--{{.Description}}--> בניית אתרים אישית במחיר משתלם</p>
+      <p>{{.Site.Params.description}}</p>
       <h1>{{.Title}}</h1>
-      <br>
-      <br>
-      <br>
-      <br>
+      
+
+      <form action="https://formspree.io/galtashma@gmail.com" method="POST">
+        <button class="button outline" role="button">
+             קבל הצעת מחיר חינם
+        </button>
+        <input type="email" name="email" placeholder="אימייל">
+       
+        
+    </form>
       
   </div>
   
 <div id="main">
 
+    
+        
+    
+    
+
   <div id="kube-features">
-    <div class="row gutters">
-      <div class="col col-4 item">
-        <figure>
-          <img alt="Baseline" height="48" src="{{ "/img/kube/icon-baseline.png" | relURL }}" width="48">
-        </figure>
-        <h3>Horizontal Rhythm</h3>
-        <p>In Kube horizontal rhythm based on a 4px vertical grid is something that we are truly proud of.</p>
-      </div>
-      <div class="col col-4 item">
-        <figure>
-          <img alt="Typography" height="48" src="{{ "/img/kube/icon-typo.png" | relURL }}" width="48">
-        </figure>
-        <h3>Typography</h3>
-        <p>We obsess over typography, and it shows throughout Kube.</p>
-      </div>
-      <div class="col col-4 item">
-        <figure>
-          <img alt="Minimalism" height="48" src="{{ "/img/kube/icon-minimalism.png" | relURL }}" width="48">
-        </figure>
-        <h3>Minimalism</h3>
-        <p>We strongly believe in minimalism as a general concept as well as a practical approach to everyday life.</p>
-      </div>
+    
+        {{ $headless := .Site.GetPage "/features" }}
+        {{ $reusablePages := $headless.Resources }}
+        {{ range $index, $elm := $reusablePages }}
+
+          {{ if (modBool $index 3) }}
+            {{ if (gt $index  0) }}
+              </div>
+            {{ end }}
+          <div class="row gutters">
+        
+          {{ end }}
+
+          <div class="col col-4 item">
+            <figure>
+              <img alt="Baseline" height="48" src="{{.Params.Icon}}" width="48">
+            </figure>
+            <h3>{{.Title}}</h3>
+            {{.Content}}
+          </div>
+
+        {{ end }}
     </div>
-    <div class="row gutters">
-      <div class="col col-4 item">
-        <h4>Mobile-first Design</h4>
-        <p>Every element in kube is mobile-first and fully embraces latest and greatest tech.</p>
-      </div>
-      <div class="col col-4 item">
-        <h4>Cross-browser</h4>
-        <p>Kube works in all modern browsers, both desktop and mobile, including latest Chrome, Firefox, Safari, Opera, IE and Edge.</p>
-      </div>
-      <div class="col col-4 item">
-        <h4>License</h4>
-        <p>Kube licensed under <a href="https://opensource.org/licenses/MIT">MIT</a>.<br>
-      Kube Framework is absolutely free for personal or commercial use.</p>
-    </div>
-  </div>
 </div>
 </div>
 {{ end }}
