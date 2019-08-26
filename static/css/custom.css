@@ -1,0 +1,90 @@
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    
+}
+
+#hero {
+    position: relative;
+    background-color: #41228e;
+    background-image: url("/img/leaf-bg.svg");
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+#hero h1 {
+    color: white;
+}
+
+#hero p {
+    color: #ccc;
+}
+
+#svg-1 {
+    position: absolute;
+    right: -50px;
+    top: 100px;
+    max-width: 300px;
+}
+
+#svg-2 {
+    position: absolute;
+    left: 50px;
+    top: 200px;
+}
+
+
+#svg-3 {
+    position: absolute;
+    left: 75px;
+    top: 20px;
+    transform: rotate(90deg);
+}
+
+@media (max-width: 600px) {
+    #svg-1 {
+        max-width: 150px;
+    }
+
+    #svg-2 {
+        top: 180px;
+        max-width: 50px;
+    }
+
+    #svg-3 {
+        max-width: 50px;
+        left: 20px;
+        top: 10px;
+    }
+}
+
+
+
+/*******************************/
+
+.floating-90deg{
+    animation-name: Floating-90;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes Floating-90{
+    from {transform:translate(0, 0px); transform: rotate(90deg);}
+    40% {transform:translate(0, 10px); transform: rotate(85deg);}
+    to {transform: translate(0, -0px); transform: rotate(90deg);}    
+}
+
+.floating{
+    animation-name: Floatingx;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes Floatingx{
+    from {transform:translate(0, 0px);}
+    40% {transform:translate(0, 10px);}
+    to {transform: translate(0, -0px);}    
+}
