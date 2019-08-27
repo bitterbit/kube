@@ -23,9 +23,10 @@ body {
 
 #svg-1 {
     position: absolute;
-    right: -50px;
+    left: calc(90% - 75px);
     top: 100px;
     max-width: 300px;
+    width: 30%;
 }
 
 #svg-2 {
@@ -42,9 +43,41 @@ body {
     transform: rotate(90deg);
 }
 
-@media (max-width: 600px) {
+
+
+form {
+    margin-top: 30px;
+}
+
+input[type=email]{
+    width: 70%;
+    max-width: 400px;
+    display:inline;
+    border: none;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.button.outline {
+    color: white;
+    border-color: white;
+}
+
+.button.outline:hover {
+    color: #ccc;
+    border-color: #ccc;
+}
+
+@media (max-width: 1000px) {
     #svg-1 {
-        max-width: 150px;
+        /* max-width: 220px; */
+    }
+}
+
+@media (max-width: 800px) {
+    /* big leaf */
+    #svg-1 {
+        /* max-width: 150px; */
     }
 
     #svg-2 {
@@ -57,9 +90,15 @@ body {
         left: 20px;
         top: 10px;
     }
+
+    form {
+        margin-top: 100px;
+    }
+    input[type=email]{
+        max-width: 200px;
+        /* display: block; */
+    }
 }
-
-
 
 /*******************************/
 
@@ -90,25 +129,3 @@ body {
 }
 
 /******************************************/
-
-form {
-    margin-top: 30px;
-}
-input[type=email]{
-    width: 70%;
-    max-width: 400px;
-    display:inline !important;
-    border: none;
-    text-align: right;
-    margin-left: 5px;
-}
-
-.button.outline {
-    color: white;
-    border-color: white;
-}
-
-.button.outline:hover {
-    color: #ccc;
-    border-color: #ccc;
-}
