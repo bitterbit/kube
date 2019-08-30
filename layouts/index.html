@@ -7,19 +7,12 @@
         <img class="floating" id="svg-1" src="/img/leaf-yellow.svg"></img>
         <img id="svg-2" src="/img/dots-group-cyan.svg"></img>
         <img id="svg-3" class="floating-90deg"  src="/img/leaf-orange.svg"></img>
-      <p>{{.Site.Params.description}}</p>
+      <p>{{.Description}}</p>
       <h1>{{.Title}}</h1>
       
-
-      <form action="https://formspree.io/galtashma@gmail.com" method="POST">
-
-        <button class="button outline" role="button">
-          {{.Params.ActionText}}
-             <!--קבל הצעת מחיר חינם-->
-        </button>
-        <input type="email" name="email" placeholder="אימייל" required>
-       
-        
+      <form action="{{.Params.FormSubmitUrl}}" method="POST">
+        <button class="button outline" role="button"> {{.Params.ActionText}} </button>
+        <input type="email" name="email" placeholder="{{ .Params.EmailPlaceholder }}" required>
     </form>
       
   </div>
