@@ -43,7 +43,13 @@
         
           {{ end }}
 
-          <div class="col col-4 item">
+          <!-- Allow Right to Left text with rtl: true attribue -->
+          {{ $text_dir := "ltr" }}
+          {{ if .Params.Rtl }}
+            {{ $text_dir = "rtl" }}
+          {{ end }}
+
+          <div class="col col-4 item" dir="{{$text_dir}}">
             <figure>
               <img alt="Baseline" height="48" src="{{.Params.Icon}}" width="48">
             </figure>
